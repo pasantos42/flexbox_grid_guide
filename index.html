@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Flex-Box & Grid</title>
+</head>
+<body>
+    <div id="menu">
+        <dl>
+            <dt><a href="#flex-direction">flex-direction</a></dt>
+            <dd>: row</dd>
+            <dd>: column</dd>
+            <dt><a href="#flex-wrap">flex-wrap</a></dt>
+            <dd>: nowrap</dd>
+            <dd>: wrap</dd>
+            <dd>: wrap-reverse</dd>
+            <dt><a href="#flex-flow">flex-flow</a></dt>
+            <dt><a href="#justify-content">justify-content</a></dt>
+            <dd>: flex-start</dd>
+            <dd>: flex-end</dd>
+            <dd>: center</dd>
+            <dd>: space-between</dd>
+            <dd>: space-around</dd>
+            <dd>: space-evenly</dd>
+            <dt><a href="#align-items">align-items</a></dt>
+            <dd>: flex-start</dd>
+            <dd>: flex-end</dd>
+            <dd>: center</dd>
+            <dd>: stretch</dd>
+            <dt><a href="#align-content">align-content</a></dt>
+            <dd>: flex-start</dd>
+            <dd>: flex-end</dd>
+            <dd>: center</dd>
+            <dd>: stretch</dd>
+            <dd>: space-between</dd>
+            <dd>: space-around</dd>
+            <dt><a href="#gap">gap</a></dt>
+            <dd>: column-gap</dd>
+            <dd>: row-gap</dd>
+            <dt><a href="#flex-items">flex-items</a></dt>
+            <dd>: order</dd>
+            <dd>: flex-grow</dd>
+            <dd>: align-self</dd>
+        </dl>
+    </div>
+    <div>
+        <h1>FLEX-BOX</h1>
+        <div id="page">
+            <img src="42-icon.svg">
+            <p><strong>DESCRIPTION:</strong><br>Flex-box aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown or dynamic.<br><br>
+            The main idea behind the flex layout is to give the container the ability to alter its items’ width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space or shrinks them to prevent overflow.</p>
+            <h2 id="flex-direction">flex-direction</h2>
+            <h3>row</h3>
+            <div class="box" id="fdr">
+                <div class="content" id="special1"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h3>column</h3>
+            <div class="box" id="fdc">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h2 id="flex-wrap">flex-wrap</h2>
+            <h3>nowrap</h3>
+            <div class="box" id="fwn">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h3>wrap</h3>
+            <div class="box" id="fww">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h3>wrap-reverse</h3>
+            <div class="box" id="fwr">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h2 id="flex-flow">flex-flow</h2>
+            <div class="box" id="ff">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+    
+            <h2 id="justify-content">justify-content</h2>
+            <h3>flex-start</h3>
+            <div class="box" id="fs">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h3>flex-end</h3>
+            <div class="box" id="fe">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h3>center</h3>
+            <div class="box" id="c">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h3>space-between</h3>
+            <div class="box" id="sb">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h3>space-around</h3>
+            <div class="box" id="sa">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h3>space-evenly</h3>
+            <div class="box" id="se">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+    
+            <h2 id="align-items">align-items</h2>
+            <h3>flex-start</h3>
+            <div class="box" id="afs">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h3>flex-end</h3>
+            <div class="box" id="afe">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h3>center</h3>
+            <div class="box" id="ac">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+            <h3>stretch</h3>
+            <div class="box" id="str">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+            </div>
+    
+            <h2 id="align-content">align-content</h2>
+            <h3>flex-start</h3>
+            <div class="box" id="cfs">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+                <div class="content"><p>4</p></div>
+                <div class="content"><p>5</p></div>
+                <div class="content"><p>6</p></div>
+            </div>
+            <h3>flex-end</h3>
+            <div class="box" id="cfe">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+                <div class="content"><p>4</p></div>
+                <div class="content"><p>5</p></div>
+                <div class="content"><p>6</p></div>
+            </div>
+            <h3>center</h3>
+            <div class="box" id="cc">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+                <div class="content"><p>4</p></div>
+                <div class="content"><p>5</p></div>
+                <div class="content"><p>6</p></div>
+            </div>
+            <h3>stretch</h3>
+            <div class="box" id="cstr">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+                <div class="content"><p>4</p></div>
+                <div class="content"><p>5</p></div>
+                <div class="content"><p>6</p></div>
+            </div>
+            <h3>space-between</h3>
+            <div class="box" id="csb">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+                <div class="content"><p>4</p></div>
+                <div class="content"><p>5</p></div>
+                <div class="content"><p>6</p></div>
+            </div>
+            <h3>space-around</h3>
+            <div class="box" id="csa">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+                <div class="content"><p>4</p></div>
+                <div class="content"><p>5</p></div>
+                <div class="content"><p>6</p></div>
+            </div>
+    
+            <h2 id="gap">gap</h2>
+            <h3>column-gap</h3>
+            <div class="box" id="cgap">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+                <div class="content"><p>4</p></div>
+                <div class="content"><p>5</p></div>
+                <div class="content"><p>6</p></div>
+            </div>
+            <h3>row-gap</h3>
+            <div class="box" id="rgap">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+                <div class="content"><p>4</p></div>
+                <div class="content"><p>5</p></div>
+                <div class="content"><p>6</p></div>
+            </div>
+            <h2 id="flex-items">flex-items</h2>
+            <h3>order</h3>
+            <div class="box" id="rgap">
+                <div class="content"><p>1</p></div>
+                <div class="content"><p>2</p></div>
+                <div class="content"><p>3</p></div>
+                <div class="content"><p>4</p></div>
+                <div class="content"><p>5</p></div>
+                <div class="content"><p>6</p></div>
+            </div>
+            <h3>order: (number)<br>flex-grow: (portion)<br>align-self: flex-start | flex-end | center | stretch</h3>
+        </div>
+    </div>
+    </body>
+</html>
