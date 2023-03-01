@@ -52,7 +52,6 @@
         <div>
             <h1>FLEX-BOX</h1>
             <div class="page">
-                <img src="42-icon.svg">
                 <p><strong>DESCRIPTION:</strong><br>Flex-box aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown or dynamic.<br><br>
                 The main idea behind the flex layout is to give the container the ability to alter its items’ width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space or shrinks them to prevent overflow.</p>
                 <h2 id="flex-direction">flex-direction</h2>
@@ -265,11 +264,28 @@
                     <div class="content" id="align-self-stretch"><p>3<br>stretch</p></div>
                 </div>
             </div>
-            <div class="page">
-                <div class="grid" id="grid">
-
-                </div>
             <h1>GRID</h1>
+            <div class="page">
+                <div class="grid" id="grid1">
+                    <div id="item-a"></div>
+                    <div id="item-b"></div>
+                </div>
+                <div class="grid" id="grid2">
+                    <div id="item-c"></div>
+                    <div id="item-d"><p>justify-self</p></div>
+                </div>
+                <div class="grid" id="grid3">
+                    <div id="item-e"><p>header</p></div>
+                    <div id="item-f"><p>main</p></div>
+                    <div id="item-g"><p>sidebar</p></div>
+                    <div id="item-h"><p>footer</p></div>
+                </div>
+                <div class="grid" id="grid4">
+                    <div id="item-a"><p>block</p></div>
+                    <div id="item-i"><p>block</p></div>
+                    <div id="item-j"><p>block</p></div>
+                </div>
+                <h3>align-self | place self<br> align-items | place-items </h3>
             </div>
         </div>
     </body>
