@@ -1,19 +1,13 @@
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+scroll-behavior: smooth;
+font-family: 'Poppins', sans-serif;
+}
 
-.content {
-    background-color: lightblue;
-    height: 100px;
-    width: 100px;
-    margin: 10px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+::selection {
+background-color: #DF7B6C;
+color: white;
 }
 
 body {
@@ -37,149 +31,14 @@ body > div {
     top: 5vh;
     left: 3vw;
     background-color: white;
-    border-radius: 45px;
+    border-radius: 45px 0 0 45px;
     height: 90vh;
     width: 20vw;
     color: rgb(68, 68, 68);
     padding: 50px 30px;
-}
-
-#flex-direction {
-    display: flex;
-    flex-direction: column;
-}
-
-.box {
-    display: flex;
-    border: 2px solid gray;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-
-.grid {
-    display: grid;
-    border: 2px solid gray;
-    border-radius: 10px;
-    width: 100%;
-    height: 600px;
-    text-align: center;
-    color: white;
-}
-
-#grid1  {
-    grid-template-columns: [first] 110px [line2] 240px [line3] auto [col4-start] 50px [five] 40px [end];
-    grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
-}
-
-#grid2  {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-areas: 
-    "header header header header"
-    "main main . sidebar"
-    "footer footer footer footer";
-}
-
-#grid3  {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: 
-    "header header header header"
-    "main main . sidebar"
-    "main main . sidebar"
-    "footer footer footer footer";
-}
-
-#grid4  {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    column-gap: 100px;
-    row-gap: 50px;
-}
-
-#item-a {
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    background-color: lightblue;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-#item-b {
-    grid-column-start: first;
-    grid-column-end: line3;
-    grid-row-start: third-line;
-    grid-row-end: last-line;
-    background-color: lightblue;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-#item-c {
-    grid-column: 3 / span 2;
-    grid-row: third-line / 4;
-    background-color: lightblue;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-#item-d {
-    grid-area: footer;
-    background-color: lightblue;
-    border-radius: 10px;
-    margin: 10px;
-    justify-self: flex-end;
-    padding: 10px;
-}
-
-#item-e {
-    grid-area: header;
-    background-color: lightblue;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-#item-f {
-    grid-area: main;
-    background-color: lightblue;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-#item-g {
-    grid-area: sidebar;
-    background-color: lightblue;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-#item-h {
-    grid-area: footer;
-    background-color: lightblue;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-#item-i {
-    grid-column: 0 / 1;
-    grid-row: 0 / 1;
-    background-color: lightblue;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-#item-j {
-    grid-column: 0 / 1;
-    grid-row: 1 / 2;
-    background-color: lightblue;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-.box + .box, .grid + .grid {
-    margin-top: 25px;
+    overflow: auto;
+    overflow-x: hidden;
+    border: 30px rgb(73, 73, 73);
 }
 
 .page {
@@ -194,35 +53,58 @@ body > div {
     width: 80%;
 }
 
+.group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.group > div {
+    text-align: center;
+}
+
+/* ///////////////////////////////////////////////////// */
+/* ///////////////////// DISPLAY /////////////////////// */
+/* ///////////////////////////////////////////////////// */
+
+.content {
+    background-color: lightblue;
+    color: white;
+    min-height: 100px;
+    min-width: 100px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    border: 2px solid gray;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.box + .box, .grid + .grid {
+    margin-top: 25px;
+}
+
+/* ///////////////////////////////////////////////////// */
+/* /////////////////////// TEXT //////////////////////// */
+/* ///////////////////////////////////////////////////// */
+
 h1 {
     color: white;
-    font-family: 'Poppins', sans-serif;
     font-size: 70px;
 }
 
-h2 {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-}
+div + h2 {margin-top: 70px;}
 
-div + h2 {
-    margin-top: 70px;
-}
+h3 {color:lightblue;}
 
-h3 {
-    text-align: center;
-    color:lightblue;
-    font-family: 'Poppins', sans-serif;
-}
-
-p {
-    font-family: 'Poppins', sans-serif;
-}
-
-dl {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.8rem;
-}
+dl {font-size: 0.8rem;}
 
 a {
     text-decoration: none;
@@ -230,16 +112,24 @@ a {
     color: #DF7B6C;
 }
 
-.content > p {
-    color: white;
-}
+/* ///////////////////////////////////////////////////// */
+/* //////////////// FLEX-BOX PROPERTIES //////////////// */
+/* ///////////////////////////////////////////////////// */
 
 #fdr {
     flex-direction: row;
 }
 
+#fdrr {
+    flex-direction: row-reverse;
+}
+
 #fdc {
     flex-direction: column;
+}
+
+#fdcr {
+    flex-direction: column-reverse;
 }
 
 #fwn {
@@ -313,12 +203,6 @@ a {
     height: 300px;
 }
 
-#str > .content {
-    height:unset;
-}
-
-
-
 #cfs {
     align-content:flex-start;
     flex-wrap: wrap;
@@ -361,10 +245,6 @@ a {
     width: 365px;
 }
 
-#cstr > .content {
-    height:unset;
-}
-
 #cgap {
     column-gap: 15px;
     align-content:center;
@@ -391,10 +271,6 @@ a {
     margin: 3px;
 }
 
-#order1 {order: 1;}
-#order2 {order: 2;}
-#order3 {order: 3;}
-
 #fg1 {
     align-content:center;
     justify-content: center;
@@ -410,14 +286,6 @@ a {
     padding: 8px;
 }
 
-#flex-grow1 {
-    flex-grow: 1;
-}
-
-#flex-grow2 {
-    flex-grow: 3;
-}
-
 #cc2 {
     align-items:center;
     height: 365px;
@@ -430,20 +298,90 @@ a {
     width: 365px;
 }
 
-#align-self-end {
-    align-self: flex-end;
+/* ///////////////////////////////////////////////////// */
+/* //////////////////// GRID SETUP ///////////////////// */
+/* ///////////////////////////////////////////////////// */
+
+.grid {
+    display: grid;
+    border: 2px solid gray;
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    color: white;
 }
 
-#align-self-start {
-    align-self: flex-start;
+#grid-fr  {
+    grid-template-rows: 200px 1fr 2fr 1fr;
 }
 
-#align-self-center {
-    align-self: center;
+#grid-name {
+    grid-template-columns: [first-col] 1fr [mid] 1fr [last-col];
+    grid-template-rows: [first-row] 1fr [mid] 1fr [last-row];
 }
 
-#align-self-stretch {
-    align-self: stretch;
-    min-height: 100px;
-    height: unset;
+#grid1  {
+    grid-template-columns: [first] 110px [line2] 240px [line3] auto [col4-start] 50px [five] 40px [end];
+    grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+}
+
+#grid2  {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+#grid3  {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+
+#grid4  {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 100px;
+    row-gap: 50px;
+}
+
+/* ///////////////////////////////////////////////////// */
+/* //////////////////// GRID ITEMS ///////////////////// */
+/* ///////////////////////////////////////////////////// */
+
+.item {
+    background-color: lightblue;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item > p {
+    margin: 0;
+}
+
+.item :nth-child(2) {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.8em;
+    color: #8f8f8f;
+}
+
+#grid-name > .item:first-child {
+    justify-content: space-between;
+}
+
+#grid-name > .item:last-child {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#grid-name > .item:last-child > p:last-child, p:first-child {
+    writing-mode: vertical-lr;
+    margin-right: 5px;
 }

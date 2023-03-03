@@ -9,6 +9,7 @@
     </head>
     <body>
         <div id="menu">
+            <p>FLEX-BOX</p>
             <dl>
                 <dt><a href="#flex-direction">flex-direction</a></dt>
                 <dd>: row</dd>
@@ -48,6 +49,31 @@
                 <dd>: center</dd>
                 <dd>: stretch</dd>
             </dl>
+            <p>GRID</p>
+            <dl>
+                <dt><a>grid-template- columns/rows</a></dt>
+                <dd>: fr</dd>
+                <dd>: auto</dd>
+                <dd>: [name]</dd>
+                <dd>: minmax()</dd>
+                <dd>: fit-content()</dd>
+                <dd>: repeat()</dd>
+                <dd>: subgrid</dd>
+                <dd>: masonry</dd>
+                <dt><a>grid-template-areas</a></dt>
+                <dd>: "area-name"</dd>
+                <dd>: dot</dd>
+                <dd>: none</dd>
+                <dt><a>column/row -gap</a></dt>
+                <dd>: normal</dd>
+                <dd>: value</dd>
+                <dt><a>grid- column/row</a></dt>
+                <dd>: normal</dd>
+                <dd>: "number"</dd>
+                <dd>: "area-name"</dd>
+                <dd>: span "number"</dd>
+                <dd>: span "area-name"</dd>
+            </dl>
         </div>
         <div>
             <h1>FLEX-BOX</h1>
@@ -57,12 +83,24 @@
                 <h2 id="flex-direction">flex-direction</h2>
                 <h3>row</h3>
                 <div class="box" id="fdr">
-                    <div class="content" id="special1"><p>1</p></div>
+                    <div class="content"><p>1</p></div>
+                    <div class="content"><p>2</p></div>
+                    <div class="content"><p>3</p></div>
+                </div>
+                <h3>row-reverse</h3>
+                <div class="box" id="fdrr">
+                    <div class="content"><p>1</p></div>
                     <div class="content"><p>2</p></div>
                     <div class="content"><p>3</p></div>
                 </div>
                 <h3>column</h3>
                 <div class="box" id="fdc">
+                    <div class="content"><p>1</p></div>
+                    <div class="content"><p>2</p></div>
+                    <div class="content"><p>3</p></div>
+                </div>
+                <h3>column-reverse</h3>
+                <div class="box" id="fdcr">
                     <div class="content"><p>1</p></div>
                     <div class="content"><p>2</p></div>
                     <div class="content"><p>3</p></div>
@@ -234,9 +272,9 @@
                 </div>
                 <h2 id="order">order</h2>
                 <div class="box">
-                    <div class="content" id="order3"><p>1<br>order: 3</p></div>
-                    <div class="content" id="order2"><p>2<br>order: 2</p></div>
-                    <div class="content" id="order1"><p>3<br>order: 1</p></div>
+                    <div class="content" style="order:3;"><p>1<br>order: 3</p></div>
+                    <div class="content" style="order:2;"><p>2<br>order: 2</p></div>
+                    <div class="content" style="order:1;"><p>3<br>order: 1</p></div>
                     <div class="content"><p>4<br>order: 0</p></div>
                     <div class="content"><p>5<br>order: 0</p></div>
                     <div class="content"><p>6<br>order: 0</p></div>
@@ -246,44 +284,149 @@
                     <div class="content"><p>1</p></div>
                     <div class="content"><p>2</p></div>
                     <div class="content"><p>3</p></div>
-                    <div class="content" id="flex-grow1"><p>4<br>flex-grow: 1</p></div>
+                    <div class="content" style="flex-grow:1;"><p>4<br>flex-grow: 1</p></div>
                 </div>
                 <div class="box" id="fg2">
-                    <div class="content" id="flex-grow1"><p>1<br>flex-grow: 1</p></div>
-                    <div class="content" id="flex-grow2"><p>2<br>flex-grow: 3</p></div>
+                    <div class="content" style="flex-grow:1;"><p>1<br>flex-grow: 1</p></div>
+                    <div class="content" style="flex-grow:3;"><p>2<br>flex-grow: 3</p></div>
                 </div>
                 <h2 id="align-self">align-self</h2>
                 <div class="box" id="cc2">
-                    <div class="content" id="align-self-start"><p>1<br>flex-start</p></div>
+                    <div class="content" style="align-self:flex-start;"><p>1<br>flex-start</p></div>
                     <div class="content"><p>2</p></div>
-                    <div class="content" id="align-self-end"><p>3<br>flex-end</p></div>
+                    <div class="content" style="align-self:flex-end;"><p>3<br>flex-end</p></div>
                 </div>
                 <div class="box" id="cfs2">
                     <div class="content"><p>1</p></div>
-                    <div class="content" id="align-self-center"><p>2<br>center</p></div>
-                    <div class="content" id="align-self-stretch"><p>3<br>stretch</p></div>
+                    <div class="content" style="align-self:center;"><p>2<br>center</p></div>
+                    <div class="content" style="align-self:stretch;"><p>3<br>stretch</p></div>
                 </div>
             </div>
             <h1>GRID</h1>
             <div class="page">
-                <div class="grid" id="grid1">
-                    <div id="item-a"></div>
-                    <div id="item-b"></div>
+                <h2>grid-template- columns/rows</h2>
+                <div class="group">
+                    <div>
+                        <h3>fr</h3>
+                        <div class="grid" id="grid-fr">
+                            <div class="item" style="grid-row: 1 / 2;">
+                                <p>200px</p><p>grid-row: 1 / 2;</p>
+                            </div>
+                            <div class="item" style="grid-row: 2 / 3;">
+                                <p>1fr</p><p>grid-row: 2 / 3;</p>
+                            </div>
+                            <div class="item" style="grid-row: 3 / 4;">
+                                <p>2fr</p><p>grid-row: 3 / 4;</p>
+                            </div>
+                            <div class="item" style="grid-row: 4 / 0;">
+                                <p>1fr</p><p>grid-row: 4 / 0;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>name</h3>
+                        <div class="grid" id="grid-name">
+                            <div class="item" style="grid-row: first-row / mid;">
+                                <p>[first-row]</p><p>grid-row: first-row / mid;</p><p>[mid]</p>
+                            </div>
+                            <div class="item" style="grid-column: first-col / last-col;">
+                                <p>[first-col]</p><p>grid-column: first-col / last-col;</p><p>[last-col]</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>minmax()</h3>
+                        <div class="grid" id="grid1">
+                            <div class="item" id="item-a"></div>
+                            <div class="item" id="item-b"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>fit-content()</h3>
+                        <div class="grid" id="grid1">
+                            <div class="item" id="item-a"></div>
+                            <div class="item" id="item-b"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>repeat()</h3>
+                        <div class="grid" id="grid1">
+                            <div class="item" id="item-a"></div>
+                            <div class="item" id="item-b"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>subgrid</h3>
+                        <div class="grid" id="grid1">
+                            <div class="item" id="item-a"></div>
+                            <div class="item" id="item-b"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>mansory</h3>
+                        <div class="grid" id="grid1">
+                            <div class="item" id="item-a"></div>
+                            <div class="item" id="item-b"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="grid" id="grid2">
-                    <div id="item-c"></div>
-                    <div id="item-d"><p>justify-self</p></div>
+                <h2>grid-template-areas</h2>
+                <div>
+                    <div class="grid" id="grid3">
+                        <div class="item" id="item-e"><p>header</p><p>grid-area: header;</p></div>
+                        <div class="item" id="item-f"><p>main</p><p>grid-area: main;</p></div>
+                        <div class="item" id="item-g"><p>sidebar</p><p>grid-area: sidebar;</p></div>
+                        <div class="item" id="item-h"><p>footer</p><p>grid-area: footer;</p></div>
+                    </div>
+                    <p>
+                    "header header header header"<br>
+                    "main main . sidebar"<br>
+                    "main main . sidebar"<br>
+                    "footer footer footer footer" ;
+                    </p>
                 </div>
-                <div class="grid" id="grid3">
-                    <div id="item-e"><p>header</p></div>
-                    <div id="item-f"><p>main</p></div>
-                    <div id="item-g"><p>sidebar</p></div>
-                    <div id="item-h"><p>footer</p></div>
+                <h2>grid- column/row</h2>
+                <div class="group">
+                    <div>
+                        <h3>normal</h3>
+                        <div class="grid" id="grid1">
+                            <div class="item" id="item-a"></div>
+                            <div class="item" id="item-b"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>"number"</h3>
+                        <div class="grid" id="grid1">
+                            <div class="item" id="item-a"></div>
+                            <div class="item" id="item-b"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>"area-name"</h3>
+                        <div class="grid" id="grid1">
+                            <div class="item" id="item-a"></div>
+                            <div class="item" id="item-b"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>span "number"</h3>
+                        <div class="grid" id="grid1">
+                            <div class="item" id="item-a"></div>
+                            <div class="item" id="item-b"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>span "area-name"</h3>
+                        <div class="grid" id="grid1">
+                            <div class="item" id="item-a"></div>
+                            <div class="item" id="item-b"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="grid" id="grid4">
-                    <div id="item-a"><p>block</p></div>
-                    <div id="item-i"><p>block</p></div>
-                    <div id="item-j"><p>block</p></div>
+                    <div class="item" id="item-a"><p>block</p></div>
+                    <div class="item" id="item-i"><p>block</p></div>
+                    <div class="item" id="item-j"><p>block</p></div>
                 </div>
                 <h3>align-self | place self<br> align-items | place-items </h3>
             </div>
