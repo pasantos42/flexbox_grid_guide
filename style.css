@@ -24,6 +24,7 @@ body > div {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+    stroke-width: 20px;
 }
 
 #menu {
@@ -31,14 +32,14 @@ body > div {
     top: 5vh;
     left: 3vw;
     background-color: white;
-    border-radius: 45px 0 0 45px;
+    border-radius: 45px ;
     height: 90vh;
     width: 20vw;
     color: rgb(68, 68, 68);
     padding: 50px 30px;
     overflow: auto;
     overflow-x: hidden;
-    border: 30px rgb(73, 73, 73);
+    border: 30px solid white;
 }
 
 .page {
@@ -51,12 +52,15 @@ body > div {
     border-radius: 45px;
     margin-bottom: 40px;
     width: 80%;
+    min-width: 600px;
 }
 
 .group {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    max-width: 850px;
+    min-width: 780px;
 }
 
 .group > div {
@@ -99,6 +103,10 @@ h1 {
     color: white;
     font-size: 70px;
 }
+
+h2 {margin-bottom: 0;}
+
+h2 + p {margin-top: 0;}
 
 div + h2 {margin-top: 70px;}
 
@@ -321,17 +329,22 @@ a {
     grid-template-rows: [first-row] 1fr [mid] 1fr [last-row];
 }
 
-#grid1  {
-    grid-template-columns: [first] 110px [line2] 240px [line3] auto [col4-start] 50px [five] 40px [end];
-    grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+#grid-repeat {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    position: relative;
 }
 
-#grid2  {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+#grid-fit-content {
+    grid-template-columns: fit-content(800px) fit-content(0);
+    grid-auto-flow: row;
 }
 
-#grid3  {
+#grid-minmax {
+    grid-template-columns: minmax(min-content, 300px) minmax(240px, 1fr);
+}
+
+#grid-area  {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas: 
@@ -341,11 +354,19 @@ a {
     "footer footer footer footer";
 }
 
-#grid4  {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    column-gap: 100px;
-    row-gap: 50px;
+#grid-gap  {
+    width: 350px;
+    height: 350px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: row;
+    position: relative;
+}
+
+#default-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: row;
 }
 
 /* ///////////////////////////////////////////////////// */
@@ -366,10 +387,19 @@ a {
     margin: 0;
 }
 
+#grid-fit-content > .item > p {
+    margin: 10px;
+}
+
+#grid-minmax > .item > p {
+    margin: 10px;
+}
+
 .item :nth-child(2) {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 0.8em;
     color: #8f8f8f;
+    margin: 0;
 }
 
 #grid-name > .item:first-child {
@@ -381,7 +411,86 @@ a {
     justify-content: space-between;
 }
 
-#grid-name > .item:last-child > p:last-child, p:first-child {
+#grid-name > .item :nth-child(2) {
+    background-color: transparent;
+}
+
+#grid-name > .item > p {
+    color:#8f8f8f;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+#grid-name > .item:last-child > p:last-child, #grid-name > .item:last-child > p:first-child {
     writing-mode: vertical-lr;
-    margin-right: 5px;
+    color:#8f8f8f;
+    background-color: whitesmoke;
+    border-radius: 15px;
+}
+
+#grid-repeat > p {
+    position: absolute;
+    left: 100px;
+    color:#8f8f8f;
+    background-color: whitesmoke;
+    border-radius: 15px;
+}
+
+#grid-repeat > p + p {
+    writing-mode: vertical-lr;
+    top: 100px;
+    left: 0;
+}
+
+#grid-gap > .item {
+    margin: 2.5px;
+}
+
+#grid-gap > p {
+    color:#8f8f8f;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    margin: 15px;
+    position: absolute;
+}
+
+#exception {
+    max-width: 560px;
+    min-width: 770px;
+}
+
+#columns {
+    min-width: 360px;
+    align-items: flex-end;
+}
+
+/* ///////////////////////////////////////////////////// */
+/* //////////////////// RESPONSIVE ///////////////////// */
+/* ///////////////////////////////////////////////////// */
+
+@media only screen and (max-width: 1460px) {
+    .page:last-child > .group {
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 1170px) {
+    .page > .group {
+        justify-content: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center
+    }
+    
+    #columns {
+        align-items: center;
+    }
+
+    #fs > .content, #fe > .content, #c > .content, #sb > .content, #sa > .content, #se > .content {
+        margin: 5px;
+    }
 }
